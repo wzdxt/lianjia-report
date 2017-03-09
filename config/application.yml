@@ -1,0 +1,11 @@
+default: &default
+
+development:
+  <<: *default
+  report_root_url: http://45.76.192.57
+
+production:
+  <<: *default
+
+test:
+  <<: *default

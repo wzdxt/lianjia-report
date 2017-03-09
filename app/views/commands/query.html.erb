@@ -1,0 +1,22 @@
+<h1>Commands#query</h1>
+<p>Find me in app/views/commands/query.html.erb</p>
+<table>
+  <thead>
+  <tr>
+    <% @data.all.columns.each do |title| %>
+        <th><%= title %></th>
+    <% end %>
+  </tr>
+  </thead>
+  <tbody>
+  <% @data.all.each do |record| %>
+      <tr>
+        <% record.values.each do |val| %>
+            <td><%= val %></td>
+        <% end %>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<%= paginate @data %>
