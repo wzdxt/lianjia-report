@@ -1,5 +1,11 @@
 module Command
   class Command1 < RawSqlModel
+
+    def qu(v)
+      @qu = v
+      self
+    end
+
     def raw_sql
       <<-SQL.strip_heredoc
 SELECT
@@ -19,7 +25,7 @@ FROM (
        WHERE date BETWEEN '2016-01-01' AND now() AND (
          name = '00'
          OR (
-           bankuai IN ('中远两湾城')
+           qu = '#{@qu}'
          )
        )
        GROUP BY date

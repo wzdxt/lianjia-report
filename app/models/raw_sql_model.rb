@@ -35,7 +35,6 @@ class RawSqlModel
 select distinct on (applicant_number) applicant_number, created_at, account_id from sms_messages
 where account_id = 147
 order by applicant_number, created_at DESC
-limit #{@limit} offset #{offset}
     SQL
   end
 

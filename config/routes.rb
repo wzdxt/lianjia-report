@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'commands/1/:qu' => 'commands#query'
+  get 'commands/1/:qu' => 'commands#query1'
 
   resource :wechat, only: [:show, :create]
   # The priority is based upon order of creation: first created -> highest priority.

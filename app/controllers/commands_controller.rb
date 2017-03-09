@@ -1,8 +1,8 @@
 class CommandsController < ApplicationController
-  def query
+  def query1
     qu = params[:qu]
-    @titles = %w(a b c)
-    @records = [qu, 2, 3]
-    @data = Command::Command1.new(params[:page] || 1)
+    @title = qu+'区每月成交记录'
+    @data = Command::Command1.new(params[:page] || 1).qu(qu)
+    render :query
   end
 end
