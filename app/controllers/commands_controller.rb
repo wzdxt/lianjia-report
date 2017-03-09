@@ -11,4 +11,12 @@ class CommandsController < ApplicationController
     @data = Command::Command2.new(params[:page] || 1).qu(qu)
     render :query
   end
+
+  def query3
+    bankuai = params[:bankuai]
+    @title = bankuai+'板块每月成交记录'
+    @data = Command::Command3.new(params[:page] || 1).bankuai(bankuai)
+    render :query
+  end
+
 end

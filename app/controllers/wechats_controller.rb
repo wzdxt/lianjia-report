@@ -14,4 +14,8 @@ class WechatsController < ActionController::Base
     request.reply.text "<a href='#{Settings.report_root_url}/commands/2/#{qu}'>#{qu}区每月成交记录</a>"
   end
 
+  on :text, with: /^3\s+([[:word:]]+)\s*$/u do |request, bankuai|
+    request.reply.text "<a href='#{Settings.report_root_url}/commands/3/#{bankuai}'>#{bankuai}板块每月成交记录</a>"
+  end
+
 end

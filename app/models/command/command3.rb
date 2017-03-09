@@ -1,5 +1,10 @@
 module Command
-  class Command1 < RawSqlModel
+  class Command3 < RawSqlModel
+
+    def bankuai(v)
+      @bankuai = v
+      self
+    end
 
     def raw_sql
       <<-SQL.strip_heredoc
@@ -20,7 +25,7 @@ FROM (
        WHERE date BETWEEN '2016-01-01' AND now() AND (
          name = '00'
          OR (
-1=1
+           bankuai = '#{@bankuai}'
          )
        )
        GROUP BY date
