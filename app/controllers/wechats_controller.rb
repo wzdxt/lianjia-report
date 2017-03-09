@@ -3,14 +3,15 @@ class WechatsController < ActionController::Base
   wechat_responder
 
   on :text do |request, content|
-    request.reply.text "echo: #{content}" # Just echo
+    request.reply.text "用法不对哦"
   end
 
-  on :text, with: /^1\s+([[:word:]]+)\s*$/u do |request, qu|
-    request.reply.text "<a href='#{Settings.report_root_url}/commands/1/#{qu}'>#{qu}区每月成交记录</a>"
+  on :text, with: /^1\s*$/u do |request|
+    request.reply.text "<a href='#{Settings.report_root_url}/commands/1'>全城每月成交记录</a>"
   end
 
-  on :text, with: /^2\s+([[:word:]]+)\s+([[:word:]]+)\s*$/u do |request, content, c2|
-    request.reply.text "url: #{content} #{c2}"
+  on :text, with: /^2\s+([[:word:]]+)\s*$/u do |request, qu|
+    request.reply.text "<a href='#{Settings.report_root_url}/commands/2/#{qu}'>#{qu}区每月成交记录</a>"
   end
+
 end

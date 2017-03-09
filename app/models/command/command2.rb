@@ -1,5 +1,5 @@
 module Command
-  class Command1 < RawSqlModel
+  class Command2 < RawSqlModel
 
     def qu(v)
       @qu = v
@@ -25,7 +25,7 @@ FROM (
        WHERE date BETWEEN '2016-01-01' AND now() AND (
          name = '00'
          OR (
-1=1
+           qu = '#{@qu}'
          )
        )
        GROUP BY date
