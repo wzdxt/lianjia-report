@@ -1,8 +1,8 @@
 default: &default
+  report_root_url: http://45.76.192.57
 
 development:
   <<: *default
-  report_root_url: http://45.76.192.57
 
 production:
   <<: *default
