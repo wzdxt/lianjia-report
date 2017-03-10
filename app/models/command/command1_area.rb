@@ -1,8 +1,9 @@
 module Command
-  class Command3 < RawSqlModel
+  # 区域每月成交记录
+  class Command1Area < RawSqlModel
 
-    def bankuai(v)
-      @bankuai = v
+    def area(v)
+      @area = v
       self
     end
 
@@ -25,7 +26,8 @@ FROM (
        WHERE date BETWEEN '2016-01-01' AND now() AND (
          name = '00'
          OR (
-           bankuai = '#{@bankuai}'
+           qu = '#{@area}'
+           OR bankuai = '#{@area}'
          )
        )
        GROUP BY date

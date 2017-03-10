@@ -1,4 +1,5 @@
 module Command
+  # 全城每月成交记录
   class Command1 < RawSqlModel
 
     def raw_sql

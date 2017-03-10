@@ -7,15 +7,19 @@ class WechatsController < ActionController::Base
   end
 
   on :text, with: /^1\s*$/u do |request|
-    request.reply.text "<a href='#{Settings.report_root_url}/commands/1'>全城每月成交记录</a>"
+    request.reply.text "<a href='#{Settings.report_root_url}/commands/1'>上海每月成交记录</a>"
   end
 
-  on :text, with: /^2\s+([[:word:]]+)\s*$/u do |request, qu|
-    request.reply.text "<a href='#{Settings.report_root_url}/commands/2/#{qu}'>#{qu}区每月成交记录</a>"
+  on :text, with: /^1\s+([[:word:]]+)\s*$/u do |request, area|
+    request.reply.text "<a href='#{Settings.report_root_url}/commands/1/#{area}'>#{area}区(板块)每月成交记录</a>"
   end
 
-  on :text, with: /^3\s+([[:word:]]+)\s*$/u do |request, bankuai|
-    request.reply.text "<a href='#{Settings.report_root_url}/commands/3/#{bankuai}'>#{bankuai}板块每月成交记录</a>"
+  on :text, with: /^2\s*$/u do |request|
+    request.reply.text "<a href='#{Settings.report_root_url}/commands/2'>上海每月成交记录</a>"
+  end
+
+  on :text, with: /^2\s+([[:word:]]+)\s*$/u do |request, area|
+    request.reply.text "<a href='#{Settings.report_root_url}/commands/2/#{area}'>#{area}区(板块)每月成交记录</a>"
   end
 
 end
