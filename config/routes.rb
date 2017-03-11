@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'commands/1/:area' => 'commands#query1area'
   get 'commands/2' => 'commands#query2'
   get 'commands/2/:area' => 'commands#query2area'
+  get 'commands/3/:area' => 'commands#query3area'
 
   resource :wechat, only: [:show, :create]
   # The priority is based upon order of creation: first created -> highest priority.

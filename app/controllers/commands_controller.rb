@@ -14,7 +14,7 @@ class CommandsController < ApplicationController
   end
 
   def query2
-    @title = '每日调价趋势'
+    @title = '全市每日调价趋势'
     @data = Command::Command2.new(params[:page] || 1)
     render :query
   end
@@ -23,6 +23,13 @@ class CommandsController < ApplicationController
     area = params[:area]
     @title = area+' 每日调价趋势'
     @data = Command::Command2Area.new(params[:page] || 1).area(area)
+    render :query
+  end
+
+  def query3area
+    area = params[:area]
+    @title = area+' 调价历史'
+    @data = Command::Command3Area.new(params[:page] || 1).area(area)
     render :query
   end
 

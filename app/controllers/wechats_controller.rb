@@ -26,4 +26,12 @@ class WechatsController < ActionController::Base
     request.reply.text "<a href='#{Settings.report_root_url}/commands/3/#{area}'>#{area} 调价历史</a>"
   end
 
+
+
+
+  on :text, with: /^9999\s*$/u do |request|
+    request.reply.text ""
+  end
+
+
 end
