@@ -18,7 +18,7 @@ FROM (
          sum(size)              面积,
          sum(price) / sum(size) 均价
        FROM chengjiao
-       WHERE date BETWEEN '2016-01-01' AND now() AND (
+       WHERE date BETWEEN '2016-03-01' AND now() AND (
          name = '00'
          OR (
 1=1
