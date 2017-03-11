@@ -6,6 +6,10 @@ class WechatsController < ActionController::Base
     request.reply.text "用法不对哦"
   end
 
+  on :text, with: /^0\s+([[:word:]]+)\s*$/u do |request, qu|
+    request.reply.text "<a href='#{Settings.report_root_url}/commands/0/#{qu}'>#{qu} 区小区列表</a>"
+  end
+
   on :text, with: /^1\s*$/u do |request|
     request.reply.text "<a href='#{Settings.report_root_url}/commands/1'>上海每月成交记录</a>"
   end
@@ -30,7 +34,7 @@ class WechatsController < ActionController::Base
 
 
   on :text, with: /^9999\s*$/u do |request|
-    request.reply.text ""
+    request.reply.text "<a href='#{Settings.report_root_url}/monitors/index'>监控页面</a>"
   end
 
 
