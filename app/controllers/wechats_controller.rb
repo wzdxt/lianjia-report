@@ -31,7 +31,15 @@ class WechatsController < ActionController::Base
   end
 
 
-
+  on :text, with: /^999\s+([[:word:]]+)\s*$/u do |request, area|
+    request.reply.text <<-RET
+    #{area}
+    0 <a href='#{Settings.report_root_url}/commands/0/#{area}'>小区列表(区)</a>
+    1 <a href='#{Settings.report_root_url}/commands/1/#{area}'>每月成交记录</a>
+    2 <a href='#{Settings.report_root_url}/commands/2/#{area}'>每日调价趋势</a>
+    3 <a href='#{Settings.report_root_url}/commands/3/#{area}'>调价历史</a>
+    RET
+  end
 
   on :text, with: /^9999\s*$/u do |request|
     request.reply.text "<a href='#{Settings.report_root_url}/monitors/index'>监控页面</a>"

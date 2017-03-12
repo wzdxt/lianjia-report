@@ -1,7 +1,6 @@
-<%= stylesheet_path 'command-query' %>
 <h2><%= @title %></h2>
-<div class="command-query-result">
-  <table>
+<div class="model-query-result">
+  <table class="result">
     <thead>
     <tr>
       <% @data.select_values.each do |col| %>
