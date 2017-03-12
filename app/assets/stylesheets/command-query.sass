@@ -1,0 +1,28 @@
+div.command-query-result
+  table.result
+    border-top: solid 0.1em black
+    border-bottom: solid 0.1em black
+    thead
+      border-bottom: solid 0.1em black
+      tr
+        background-color: #87ceff
+        th
+          white-space: nowrap
+    tbody
+      td
+        padding-left: 0.2em
+        padding-right: 0.2em
+      tr:nth-child(odd)
+        background-color: #cae1ff
+      tr:nth-child(even)
+        background-color: #bfefff
+      td.col-qu, td.col-bankuai, td.col-xiaoqu, td.col-shijian, td.col-fangchan
+        white-space: nowrap
+      td.col-chajia, td.col-tiaojiaqian, td.col-tiaojiahou, td.col-danjia, td.col-danjiacha
+        text-align: right
+      td.col-tiaozhenqian, td.col-tiaozhenghou, td.col-danjia, td.col-danjiacha
+        min-width: 3.2em
+      td.col-fangchan
+        overflow: hidden
+        max-width: 15em
+

@@ -10,12 +10,12 @@ module Command
     def raw_sql
       <<-SQL.strip_heredoc
 SELECT
-  date_format(时间, '%y-%m-%d') 时间,
-  sum(调幅)                     总差额,
-  sum(abs(调幅) + 调幅) / 2       上调,
-  sum(abs(调幅) - 调幅) / 2       下调,
-  sum(面积) /100                `总面积`,
-  sum(调幅) / sum(面积) * 100     单价差
+  date_format(时间, '%y-%m-%d')  shijian,
+  sum(调幅)                      zongchae,
+  sum(abs(调幅) + 调幅) / 2       shangtiao,
+  sum(abs(调幅) - 调幅) / 2       xiatiao,
+  sum(面积) /100                 zongmianji,
+  sum(调幅) / sum(面积) * 100     danjiacha
 FROM (
        SELECT
          p.created_at           时间,

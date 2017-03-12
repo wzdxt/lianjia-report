@@ -21,11 +21,27 @@
 
 ch:
   attributes:
-    qu: "区"
-    bankuai: "板块"
+    yuefen: 月份
+    chengjiaoliang: 成交量
+    chengjiaoe: 成交额
+    zongmianji: 总面积
+    junjia: 均价
+    shijian: 时间
+    zongchae: 总差额
+    shangtiao: 上调
+    xiatiao: 下调
+    danjiacha: 单价差
+    qu: 区
+    bankuai: 板块
+    xiaoqu: 小区
+    fangchan: 房产
+    chajia: 差价
+    tiaojiaqian: 调价前
+    tiaojiahou: 调价后
+    danjia: 单价
   activerecord:
     models:
       user: Dude
     attributes:
       xiaoqu:
-        name: "小区"
+        name: 小区

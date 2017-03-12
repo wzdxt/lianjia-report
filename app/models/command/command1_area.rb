@@ -10,11 +10,11 @@ module Command
     def raw_sql
       <<-SQL.strip_heredoc
 SELECT
-  date_format(时间, '%Y-%m') 月份,
-  sum(成交量)                 成交量,
-  sum(成交额)                 成交额,
-  sum(面积)                  总面积,
-  sum(成交额) / sum(面积)       均价
+  date_format(时间, '%Y-%m')  yuefen,
+  sum(成交量)                 chengjiaoliang,
+  sum(成交额)                 chengjiaoe,
+  sum(面积)                   zongmianji,
+  sum(成交额) / sum(面积)      junjia
 FROM (
        SELECT
          date                   时间,
